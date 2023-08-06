@@ -9,6 +9,8 @@ require('dotenv').config();
 app.use(cors())
 app.use(express.json());
 app.use(express.urlencoded({ extended: false }));
+const coinFlip  = require('./controllers/coinFlip');
+app.use('/controller', coinFlip);
 const userRoute = require('./routes/user');
 app.use('/user', userRoute);
 
